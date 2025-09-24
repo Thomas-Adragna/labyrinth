@@ -1,0 +1,5 @@
+﻿
+namespace Labyrinth;
+
+interface Collectable { }
+
