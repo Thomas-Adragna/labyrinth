@@ -23,7 +23,7 @@
                 {
                     '#' => new Wall(),
                     ' ' => new Room(),
-                    'D' => new Door(),
+                    '/' => new Door(),
                     'k' => new Room { Item = new Key() },
                     _ => throw new ArgumentException("Invalid character in board string.")
                 };
