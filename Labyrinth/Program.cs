@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+var labyrinth = new Labyrinth.Labyrinth("## ###\n##  k#\n##/# #");
+Console.Write(labyrinth);

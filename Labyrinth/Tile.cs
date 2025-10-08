@@ -1,8 +1,15 @@
-﻿using System;
+﻿
 namespace Labyrinth;
 
-abstract class Tile
+internal abstract class Tile
 {
-    public abstract bool IsTraversable { get; }
-    public abstract void Pass();
+    protected abstract bool IsTraversable { get; }
+
+    public void Pass()
+    {
+        if (!IsTraversable)
+        {
+            throw new NotTraversableException();
+        }
+    }
 }

@@ -2,21 +2,15 @@
 
 internal class Door : Tile
 {
-    private Key key { get; } = new Key();
-    private bool isOpen = false;
-    override public bool IsTraversable => isOpen;
-    /// <summary>
-    /// 
-    /// </summary>
-    override public void Pass()
-    {
-        if (!IsTraversable){ throw new NotTraversableException(); }
-    }
+    private Key Key { get; } = new Key();
+    private bool _isOpen = false;
+    protected override bool IsTraversable => _isOpen;
+    
     public void Open(Key key)
     {
-        if (this.key == key)
+        if (Key == key)
         {
-            isOpen = true;
+            _isOpen = true;
         }
     }
 }
