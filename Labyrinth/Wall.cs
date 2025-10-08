@@ -2,9 +2,6 @@
 
 class Wall : Tile
 {
-    override public bool IsTraversable { get; } = false;
-    override public void Pass()
-    {
-        if (!IsTraversable) { throw new NotTraversableException(); }
-    }
+    override public bool IsTraversable => false;
+    public override void Pass() => throw new InvalidOperationException("Impossible de traverser un mur");
 }

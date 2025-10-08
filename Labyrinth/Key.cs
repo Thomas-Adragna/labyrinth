@@ -2,6 +2,6 @@
 
 namespace Labyrinth;
 
-internal class Key : Collectable
+internal class Key : ICollectable
 {
 }

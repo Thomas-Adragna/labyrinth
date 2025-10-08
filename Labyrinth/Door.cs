@@ -3,7 +3,8 @@
 internal class Door : Tile
 {
     private Key key { get; } = new Key();
-    override public bool IsTraversable { get; protected set; } = false;
+    private bool isOpen = false;
+    override public bool IsTraversable => isOpen;
     /// <summary>
     /// 
     /// </summary>
@@ -11,11 +12,11 @@ internal class Door : Tile
     {
         if (!IsTraversable){ throw new NotTraversableException(); }
     }
-    public void open(Key key)
+    public void Open(Key key)
     {
         if (this.key == key)
         {
-            IsTraversable = true;
+            isOpen = true;
         }
     }
 }

@@ -3,26 +3,31 @@
  class Labyrinth
 {
     private Tile[,] tiles;
+    public int Width { get; }
+    public int Height { get; }
+
     public Labyrinth(string board)
     {
 
         string[] rows = board.Split('\n');
-        // Tile[,] newTiles = new Tile[rows.GetLength() + 1, row[0].GetLength()];
+        Height = rows.Length;
+        Width = rows[0].Length;
+        tiles = new Tile[Height, Width];
 
-        foreach (string row in rows)
+        for (int y = 0; y < Height; y++)
         {
-            foreach (char tile in row)
+            for (int x = 0; x < Width; x++)
             {
-                Tile t = tile switch
+                char tileChar = rows[y][x];
+                tiles[y, x] = tileChar switch
                 {
                     '#' => new Wall(),
                     ' ' => new Room(),
                     'D' => new Door(),
+                    'k' => new Room { Item = new Key() },
                     _ => throw new ArgumentException("Invalid character in board string.")
                 };
-
             }
         }
     }
-
 }

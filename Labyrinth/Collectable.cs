@@ -1,5 +1,5 @@
 ﻿
 namespace Labyrinth;
 
-interface Collectable { }
+interface ICollectable { }
 

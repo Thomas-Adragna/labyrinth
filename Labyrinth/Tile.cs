@@ -3,6 +3,6 @@ namespace Labyrinth;
 
 abstract class Tile
 {
-    abstract public bool IsTraversable { get; protected set; }
-    abstract public void Pass();
+    public abstract bool IsTraversable { get; }
+    public abstract void Pass();
 }
